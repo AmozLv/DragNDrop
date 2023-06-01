@@ -20,12 +20,16 @@ public class DragDropSkripts : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 		
 
 	public void OnBeginDrag(PointerEventData eventData){
+		//Uzklikšķinot uz mašīnu atskaņo iedarbināšnas skaņu
+		objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanaKoAtskanot [12]);
 		objektuSkripts.pedejaisVilktais = null;
 		kanvasGrupa.alpha = 0.6f;
 		kanvasGrupa.blocksRaycasts = false; 
 	}
 		
 	public void OnDrag(PointerEventData eventData){
+		//Velkot mašinu atskaņo braukšanas skaņu
+		objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanaKoAtskanot [11]);
 		velkObjRectTransf.anchoredPosition += eventData.delta / objektuSkripts.kanva.scaleFactor;
 	}
 		
