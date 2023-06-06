@@ -10,6 +10,9 @@ public class AinuParsledzejs : MonoBehaviour {
 	public void UzPilsetu(){
 		SceneManager.LoadScene ("Pilseta", LoadSceneMode.Single);
 	}
+	public void UzBeigam(){
+		SceneManager.LoadScene ("Beigas", LoadSceneMode.Single);
+	}
 	public void apturet(){
 		Application.Quit ();
 		}

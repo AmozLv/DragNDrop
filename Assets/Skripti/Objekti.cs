@@ -16,6 +16,9 @@ public class Objekti : MonoBehaviour {
 	public GameObject dzeltTraktors;
 	public GameObject zalTraktors;
 	public GameObject ugunsdzeseji;
+	public float laiks;
+	public int punkti=0;
+
 
 	[HideInInspector]
 	public Vector2 atkrMKoord;
