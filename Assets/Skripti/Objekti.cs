@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Objekti : MonoBehaviour {
 	public GameObject atkritumuMasina;
@@ -16,8 +17,14 @@ public class Objekti : MonoBehaviour {
 	public GameObject dzeltTraktors;
 	public GameObject zalTraktors;
 	public GameObject ugunsdzeseji;
-	public float laiks;
-	public int punkti=0;
+	public GameObject beiguEkrans;
+	public GameObject zvaigzne1;
+	public GameObject zvaigzne2;
+	public GameObject zvaigzne3;
+	//pievieno punktu mainigo kura atradisies punktu skaits
+	public int punkti = 0;
+	//pievieno laika mainigo
+
 
 
 	[HideInInspector]
@@ -51,20 +58,31 @@ public class Objekti : MonoBehaviour {
 	[HideInInspector]
 	public bool vaiIstajaVieta = false;
 	public GameObject pedejaisVilktais = null;
+	public float laiks;
+	//mainigais kurs nosaka vai laiks tiek skaitīts
+	public bool laiksAktivs = true;
+	// Pievieno Text objektu kur atradīsies laiks
+	public Text laikaParadisana;
 	void Start () {
 		atkrMKoord = atkritumuMasina.GetComponent<RectTransform> ().localPosition;
 		atraMKoord = atraPalidziba.GetComponent<RectTransform> ().localPosition;
 		bussMKoord = autobuss.GetComponent<RectTransform> ().localPosition;
 		//Sākotnējās pozīcijas noteikšana
-		b2MKoord = atkritumuMasina.GetComponent<RectTransform> ().localPosition;
-		cemtMKoord = atraPalidziba.GetComponent<RectTransform> ().localPosition;
-		e46MKoord = autobuss.GetComponent<RectTransform> ().localPosition;
-		e61MKoord = atkritumuMasina.GetComponent<RectTransform> ().localPosition;
-		eskavMKoord = atraPalidziba.GetComponent<RectTransform> ().localPosition;
-		policijaMKoord = autobuss.GetComponent<RectTransform> ().localPosition;
-		dzeltTrakMKoord = atkritumuMasina.GetComponent<RectTransform> ().localPosition;
-		zalTrakMKoord = atraPalidziba.GetComponent<RectTransform> ().localPosition;
-		ugunsMKoord = autobuss.GetComponent<RectTransform> ().localPosition;
+		b2MKoord = b2.GetComponent<RectTransform> ().localPosition;
+		cemtMKoord = cementaMasina.GetComponent<RectTransform> ().localPosition;
+		e46MKoord = e46.GetComponent<RectTransform> ().localPosition;
+		e61MKoord = e61.GetComponent<RectTransform> ().localPosition;
+		eskavMKoord = eskavators.GetComponent<RectTransform> ().localPosition;
+		policijaMKoord = policija.GetComponent<RectTransform> ().localPosition;
+		dzeltTrakMKoord = dzeltTraktors.GetComponent<RectTransform> ().localPosition;
+		zalTrakMKoord = zalTraktors.GetComponent<RectTransform> ().localPosition;
+		ugunsMKoord = ugunsdzeseji.GetComponent<RectTransform> ().localPosition;
+	
+		//Beigu ekrāna izslēgšana sākumā, lai nebūtu redzams
+		beiguEkrans.SetActive (false);
+
+		//Laika tekstloga izslēgšana sākumā, lai nebūtu redzams
+		laikaParadisana.GetComponent<Text>().enabled = false;
 	}
 
 }
